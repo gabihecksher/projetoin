@@ -1,4 +1,6 @@
 class CategoriesController < ApplicationController
+  before_action :logged_in_user, only: [:edit, :update, :destroy]
+  before_action :user_adm, only: [:edit, :update, :destroy]
   before_action :set_category, only: [:show, :edit, :update, :destroy]
 
   # GET /categories
