@@ -4,6 +4,7 @@ class BooksController < ApplicationController
   # GET /books
   # GET /books.json
   def index
+    @categories = Category.all
     @books = Book.all
   end
 
@@ -14,6 +15,7 @@ class BooksController < ApplicationController
 
   # GET /books/new
   def new
+    @categories = Category.all
     @book = Book.new
   end
 
@@ -40,6 +42,7 @@ class BooksController < ApplicationController
   # PATCH/PUT /books/1
   # PATCH/PUT /books/1.json
   def update
+    
     respond_to do |format|
       if @book.update(book_params)
         format.html { redirect_to @book, notice: 'Book was successfully updated.' }
