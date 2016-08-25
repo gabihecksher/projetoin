@@ -26,6 +26,7 @@ class BooksController < ApplicationController
   # POST /books
   # POST /books.json
   def create
+    @categories = Category.all
     @book = Book.new(book_params)
 
     respond_to do |format|

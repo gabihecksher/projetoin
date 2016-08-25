@@ -26,23 +26,18 @@
     <%= f.number_field :available_quantity %>
   </div>
 
-  <div class="field"></div>
-    <select>
-        <%= @categories.each do |category| %>
-            <option value="<% category.id %>"><%= category.name %></option>
-        <% end %>
-    </select>
+  <div class="field">
+        <%= f.collection_select :category_id, Category.order(:id),:id,:name, include_blank: false, class: 'form-control' %>
+  </div>
             
   </div>
     
   <div class="field">
-    <%= f.label :author_id %>
-    <%= f.number_field :author_id %>
+        <%= f.collection_select :author_id, Author.order(:id),:id,:name, include_blank: false, class: 'form-control' %>
   </div>
 
   <div class="field">
-    <%= f.label :publisher_id %>
-    <%= f.number_field :publisher_id %>
+        <%= f.collection_select :publisher_id, Publisher.order(:id),:id,:name, include_blank: false, class: 'form-control' %>
   </div>
 
   <div class="field">
