@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   before_action :logged_in_user, only: [:edit, :update, :destroy] #como fazer isso valer apenas para o próprio usuário que está logado?
   before_action :set_user, only: [:show, :edit, :update, :destroy]
-  before_action :correct_user, only: [:edit, :update, :destroy]
+  before_action :user_adm, only: [:edit, :update, :destroy]
   
 
   # GET /users
@@ -69,6 +69,7 @@ class UsersController < ApplicationController
     def set_user
       @user = User.find(params[:id])
     end
+    
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
@@ -83,8 +84,7 @@ class UsersController < ApplicationController
     end
 
     def user_adm
-      @user = User.find(params[:adm])
-      redirect_to(root_url) unless @user == True
+      redirect_to(root_url) unless current_user.adm == true
     end
-    
+
 end

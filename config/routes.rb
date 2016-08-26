@@ -5,7 +5,7 @@ Rails.application.routes.draw do
 
   get 'sessions/new'
 
-  root 'users#index'
+  root 'static_pages#catalog'
   
   get  'static_pages/home'
   get  'static_pages/catalog'
