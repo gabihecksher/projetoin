@@ -1,4 +1,5 @@
   
+<%= render "layouts/header" %>
 <!DOCTYPE html>
 <html>
   <head>
@@ -8,20 +9,21 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-   <%= render "layouts/header" %>
+   
   <body>
+    
+    <%= yield %>
+    
     <% flash.each do |message_type, message| %>
       <div class="alert alert-<%= message_type %>"><%= message %></div>
-      <% end %>
-      <%= yield %>
-       
-      
+    <% end %>
       <% if logged_in? %>
         <%= link_to 'Logout', logout_path, method: :delete, data: { confirm: 'Are you sure?' } %>
       <% else %>
         <%= link_to 'Login', login_path, method: :get %>
       <% end %>
   </body>
-      	<%= render"layouts/footer"%>
+      	
 </html>
+<%= render"layouts/footer"%>   
 
