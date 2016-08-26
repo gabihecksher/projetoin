@@ -12,8 +12,9 @@
     <% flash.each do |message_type, message| %>
       <div class="alert alert-<%= message_type %>"><%= message %></div>
       <% end %>
-      
+    <% render 'layouts/header' %>  
     <%= yield %>
+    <% render 'layouts/footer' %>  
     <% if logged_in? %>
         <%= link_to 'Logout', logout_path, method: :delete, data: { confirm: 'Are you sure?' } %>
     <% else %>

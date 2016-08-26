@@ -1,0 +1,32 @@
+.blue{
+	background: blue;
+
+}
+
+.orange{
+	background: orange;
+}
+
+.yellow{
+	background: yellow;
+}
+
+.red{
+	background: red;
+	border: solid;
+}
+
+.green{
+	background: green;
+}
+.col-xs-2{
+	height: 250px;
+}
+
+.col-xs-3{
+	height: 250px;
+}
+
+.col-xs-6{
+	height: 500px;
+}
