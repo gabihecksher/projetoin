@@ -1,7 +1,14 @@
 Rails.application.routes.draw do
+  get 'static_pages/home'
+
+  get 'static_pages/contact'
+
   get 'sessions/new'
 
   root 'users#index'
+  
+  get  'static_pages/home'
+  get  'static_pages/catalog'
 
   get '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'

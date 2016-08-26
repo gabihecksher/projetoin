@@ -1,0 +1,11 @@
+<% @books.each do |book| %>
+    <% if book.available_quantity >= 1 %>
+        <h2> Nome: <%= book.name %> </h2>
+        <h3> Autor: <%= book.author.name %> </h3>
+        <h3> Preço: <%= book.price %> </h3>
+        <h3> Sinopse: <%= book.description %> </h3>
+        <button type="button">Comprar</button>
+        <button type="button">Adicionar à estante</button>
+        
+    <% end %>
+<% end %>
