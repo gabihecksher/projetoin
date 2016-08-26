@@ -5,4 +5,7 @@ class StaticPagesController < ApplicationController
   def catalog
     @books = Book.all
   end
+  
+  def buy
+  end
 end
