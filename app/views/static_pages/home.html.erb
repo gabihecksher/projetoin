@@ -1,5 +1,10 @@
 
-
+<script src="js/jquery.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/jquery.scrollUp.min.js"></script>
+	<script src="js/price-range.js"></script>
+    <script src="js/jquery.prettyPhoto.js"></script>
+    <script src="js/main.js"></script>
 
 
 <section id="slider"><!--slider-->
@@ -118,16 +123,9 @@
 								<div id="mens" class="panel-collapse collapse">
 									<div class="panel-body">
 										<ul>
-											<li><a href="#">Educacional</a></li>
-											<li><a href="#">Literatura</a></li>
-											<li><a href="#">Ficção</a></li>
-											<li><a href="#">Não-Ficção</a></li>
-											<li><a href="#">Romance</a></li>
-											<li><a href="#">idiomas</a></li>
-											<li><a href="#">Infantil</a></li>
-											<li><a href="#">Auto-Ajuda</a></li>
-											<li><a href="#">Religioso</a></li>
-											<li><a href="#">Infanto-Juvenil</a></li>
+											<% @categories.each do |category| %>
+												<li><a href="#"><%= category.name %></a></li>
+											<% end %>
 										</ul>
 									</div>
 								</div>
@@ -145,17 +143,9 @@
 								<div id="womens" class="panel-collapse collapse">
 									<div class="panel-body">
 										<ul>
-											<li><a href="#">Educacional</a></li>
-											<li><a href="#">Literatura</a></li>
-											<li><a href="#">Ficção</a></li>
-											<li><a href="#">Não-Ficção</a></li>
-											<li><a href="#">Romance</a></li>
-											<li><a href="#">Idiomas</a></li>
-											<li><a href="#">Infantil</a></li>
-											<li><a href="#">Auto-Ajuda</a></li>
-											<li><a href="#">Religioso</a></li>
-											<li><a href="#">Infanto-Juvenil</a></li>
-											<li><a href="#">HQ's</a></li>
+											<% @categories.each do |category| %>
+												<li><a href="#"><%= category.name %></a></li>
+											<% end %>
 										</ul>
 									</div>
 								</div>
@@ -205,8 +195,12 @@
 								</div>
 							</div>
 						</div><!--/category-products-->
+						
+						
 					
 				</div>
+				
+				
 			</div>
 		</div>
 	</section>
