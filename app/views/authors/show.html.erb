@@ -1,17 +1,22 @@
 
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @author.name %>
-</p>
+  
 
-<p>
-  <strong>Lastname:</strong>
-  <%= @author.lastname %>
-</p>
+          <p>
+            <strong>Name:</strong>
+            <%= @author.name %>
+          </p>
 
-<%= link_to 'Edit', edit_author_path(@author) %> |
-<%= link_to 'Back', authors_path %>
+            <p>
+              <strong>Lastname:</strong>
+              <%= @author.lastname %>
+            </p>
+      
+      
+    
 
+      <%= link_to 'Edit', edit_author_path(@author) %> |
+      <%= link_to 'Back', authors_path %>
 
+  
