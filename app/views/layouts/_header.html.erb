@@ -42,24 +42,24 @@
 						</div>
 						<div class="mainmenu pull-left">
 							<ul class="nav navbar-nav collapse navbar-collapse">
-								<li><a href="index.html" class="active">Início</a></li>
+								<li><%= link_to('/static_pages/home') do %>Início<% end %></li>
 								<li class="dropdown"><a href="#">Catálogo<i class="fa fa-angle-down"></i></a>
                                     <ul role="menu" class="sub-menu">
-                                        <li><a href="shop.html">Todos os Livros</a></li>
-										<li><a href="product-details.html">Mais Vendidos</a></li> 
-										<li><a href="cart.html"></a></li> 
-										<li><a href="login.html"></a></li> 
+                                        <li><%= link_to('/static_pages/catalog') do %>Todos os livros<% end %></li>
+										<li><%= link_to('/static_pages/catalog') do %>Mais Vendidos<% end %></li>
                                     </ul>
                                 </li> 
 								
-								<li><a href="contact-us.html">Contato</a></li>
+								<li><%= link_to('/static_pages/contact') do %>Contato<% end %></li>
 							</ul>
 						</div>
 					</div>
 					<div class="col-sm-3">
-						<div class="search_box pull-right">
-							<input type="text" placeholder="Buscar"/>
-						</div>
+						<%= form_tag("/search", method: "get") do %>
+						  <%= label_tag(:q, "Search for:") %>
+						  <%= text_field_tag(:q) %>
+						  <%= submit_tag("Search") %>
+						<% end %>
 					</div>
 				</div>
 			</div>

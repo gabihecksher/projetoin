@@ -11,4 +11,14 @@ class ApplicationController < ActionController::Base
     def user_adm
       redirect_to(root_url) unless current_user.adm == true
     end
+    #def search(input)
+    #  @books = Book.all
+    #  @books.each do |book|
+    #    if input == book.name
+    #      redirect_to book
+    #    else
+    #      redirect_to root_url
+    #    end
+      #end
+    #end
 end

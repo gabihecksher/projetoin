@@ -4,7 +4,7 @@
       border-radius: 50%; 
     }
     .avatar img{
-      height: 150px;
+      height: 300px;
       width: auto;
     }
 
@@ -17,39 +17,75 @@
 </p>
 
 <p>
-  <strong>Name:</strong>
+  <strong>Nome:</strong>
   <%= @book.name %>
 </p>
 
 <p>
-  <strong>Price:</strong>
+  <strong>Preço:</strong>
   <%= @book.price %>
 </p>
 
 <p>
-  <strong>Available quantity:</strong>
+  <strong>Quantidade disponível:</strong>
   <%= @book.available_quantity %>
 </p>
 
 <p>
-  <strong>Category:</strong>
+  <strong>Categoria:</strong>
   <%= @book.category_id %>
 </p>
 
 <p>
-  <strong>Author:</strong>
+  <strong>Autor:</strong>
   <%= @book.author_id %>
 </p>
 
 <p>
-  <strong>Publisher:</strong>
+  <strong>Editora:</strong>
   <%= @book.publisher_id %>
 </p>
 
 <p>
-  <strong>Description:</strong>
+  <strong>Sinopse:</strong>
   <%= @book.description %>
 </p>
+
+<% if logged_in? %>
+  <input id="submit_button" type="submit" value="CONTINUAR" /><br>
+  <p>Próximo passo: pagamento</p><br>
+<% else %>
+  <div class="row">
+	  <label for="name">Nome do destinatário:</label><br />
+		  <input id="name" class="input" name="name" type="text" value="" size="30" /><br />
+  </div><br>
+  <div class="row">
+	  <label for="name">CEP:</label><br />
+		  <input id="name" class="input" name="name" type="text" value="" size="30" /><br />
+  </div><br>
+  <div class="row">
+	  <label for="name">Telefone do destinatário:</label><br />
+		  <input id="name" class="input" name="name" type="text" value="" size="30" /><br />
+  </div><br>
+  <div class="row">
+	  <label for="name">Endereço do destinatário:</label><br />
+		  <input id="name" class="input" name="name" type="text" value="" size="30" /><br />
+  </div><br>
+  <div class="row">
+	  <label for="name">E-mail do comprador:</label><br />
+		  <input id="name" class="input" name="name" type="text" value="" size="30" /><br />
+  </div><br>
+  <div class="row">
+	  <label for="name">CPF do comprador:</label><br />
+		  <input id="name" class="input" name="name" type="text" value="" size="30" /><br />
+  </div><br>
+  <div class="row">
+	  <label for="name">Nome do comprador:</label><br />
+		  <input id="name" class="input" name="name" type="text" value="" size="30" /><br />
+  </div><br>
+  <input id="submit_button" type="submit" value="CONTINUAR" /><br>
+  <p>Próximo passo: pagamento</p><br>
+<% end %>
 
 <%= link_to 'Edit', edit_book_path(@book) %> |
 <%= link_to 'Back', books_path %>

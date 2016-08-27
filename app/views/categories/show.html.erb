@@ -7,52 +7,56 @@
       height: 150px;
       width: auto;
     }
+    
+  </style>
 
-</style>
-    	<section>
-		<div class="container">
-			<div class="row">
-				<div class="col-sm-3">
-					<div class="left-sidebar">
-						<h2>Categorias</h2>
-						<div class="panel-group category-products" id="accordian"><!--category-productsr-->
-							
-							<% @categories.each do |category| %>
-									<div class="panel panel-default">
-    								<div class="panel-heading">
-    									 <%= link_to(category) do %>
-                          <strong><%= category.name %></strong>
-                        <% end %>
-    								</div>
-    							</div>
-							<% end %>
-							
-						</div><!--/category-products-->
-						
-						
-					
-				</div>
-				
-				
-			</div>
-		</div>
-	</section>
-	
-<h1> <%= @category.name %> </h1>
-
-<% @books.each do |book| %>
-    <% if book.category_id >= @category.id %>
-    	<p class="avatar">
-    	<%= image_tag book.avatar.url(:large) %>
-		  </p>
-        <h2> Nome: <%= book.name %> </h2>
-        <p> Autor: <%= book.author.name %> </p>
-        <p> Preço: <%= book.price %> </p>
-        <p> Sinopse: <%= book.description %> </p>
-        <%= link_to(book) do %><strong>Comprar</strong><% end %>
-        <button type="button">Adicionar à estante</button><br>
-    <% end %>
+	  <section>
+	    <h1> <center><%= @category.name %> </center> </h1>
+		    <div class="container">
+   	      <div class="row">
+    				<div class="col-sm-3">
+    					<div class="left-sidebar">
+    						<h2>Categorias</h2>
+    						<div class="panel-group category-products" id="accordian"><!--category-productsr-->
+    							<% @categories.each do |category| %>
+    									<div class="panel panel-default">
+        								<div class="panel-heading">
+        									 <%= link_to(category) do %>
+                           <strong><%= category.name %></strong>
+                            <% end %>
+        								</div>
+        							</div>
+    							<% end %>
+    							
+    						</div><!--/category-products-->
+    					</div>
+    			  </div>
+    			 </div>
+    			</div>
+    	</section>
+    			  
+    			  <!--books-->
+    			  
+    			  
+    			  
+    			  
+                            <% @books.each do |book| %>
+    			                  <% if book.category_id >= @category.id %>
+                          	<p class="avatar">
+                          	<%= image_tag book.avatar.url(:large) %>
+                      		  </p>
+                              <h2> Nome: <%= book.name %> </h2>
+                              <p> Autor: <%= book.author.name %> </p>
+                              <p> Preço: <%= book.price %> </p>
+                              <p> Sinopse: <%= book.description %> </p>
+                              <%= link_to(book) do %><strong>Comprar</strong><% end %>
+                              <button type="button">Adicionar à estante</button><br>
+                              
+                              <% end %>
+                             
 
 <% end %>
 <%= link_to 'Edit', edit_category_path(@category) %> |
 <%= link_to 'Back', categories_path %>
+    
+
