@@ -1,11 +1,27 @@
 <%= form_for(:session, url: login_path) do |f| %>
-
-	<%= f.label :email %><br>
-	<%= f.text_field :email %><br>
-
-	<%= f.label :password %><br>
-	<%= f.password_field :password %><br>
-
-	<%= f.submit "Log in" %>
-
+	
+	<section id="form"><!--form-->
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-4 col-sm-offset-4">
+					<div class="login-form"><!--login form-->
+						<h1>Login to your account</h1>
+						<form action="#">
+							<%= f.label :email %><br>
+							<%= f.text_field :email %><br>
+							<%= f.label :password %><br>
+							<%= f.password_field :password %><br>
+							<br>
+							<%= f.submit "Log in" %>
+							
+						
+						</form>
+					</div><!--/login form-->
+				</div>
+			</div>	
+		</div>
+	</section>	
+	
 <% end %>
+
+	

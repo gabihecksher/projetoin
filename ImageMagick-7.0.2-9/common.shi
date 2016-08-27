@@ -1,0 +1,22 @@
+# Test environment
+top_srcdir='/home/ubuntu/workspace/projeto/ImageMagick-7.0.2-9'
+top_builddir='/home/ubuntu/workspace/projeto/ImageMagick-7.0.2-9'
+
+set -a
+COMPARE="/home/ubuntu/workspace/projeto/ImageMagick-7.0.2-9/utilities/magick compare"
+COMPOSITE="/home/ubuntu/workspace/projeto/ImageMagick-7.0.2-9/utilities/magick composite"
+CONJURE="/home/ubuntu/workspace/projeto/ImageMagick-7.0.2-9/utilities/magick conjure"
+CONVERT="/home/ubuntu/workspace/projeto/ImageMagick-7.0.2-9/utilities/magick convert"
+DISPLAY="/home/ubuntu/workspace/projeto/ImageMagick-7.0.2-9/utilities/magick display"
+IDENTIFY="/home/ubuntu/workspace/projeto/ImageMagick-7.0.2-9/utilities/magick identify"
+MAGICK="/home/ubuntu/workspace/projeto/ImageMagick-7.0.2-9/utilities/magick"
+MONTAGE="/home/ubuntu/workspace/projeto/ImageMagick-7.0.2-9/utilities/magick montage"
+VALIDATE="/home/ubuntu/workspace/projeto/ImageMagick-7.0.2-9/tests/validate"
+DRAWTEST="/home/ubuntu/workspace/projeto/ImageMagick-7.0.2-9/tests/drawtest"
+WANDTEST="/home/ubuntu/workspace/projeto/ImageMagick-7.0.2-9/tests/wandtest"
+LD_LIBRARY_PATH="/home/ubuntu/workspace/projeto/ImageMagick-7.0.2-9/magick/.libs:${LD_LIBRARY_PATH}"
+MAGICK_CODER_MODULE_PATH="/home/ubuntu/workspace/projeto/ImageMagick-7.0.2-9/coders"
+MAGICK_CONFIGURE_PATH="/home/ubuntu/workspace/projeto/ImageMagick-7.0.2-9/config:/home/ubuntu/workspace/projeto/ImageMagick-7.0.2-9/config"
+MAGICK_FILTER_MODULE_PATH="/home/ubuntu/workspace/projeto/ImageMagick-7.0.2-9/filters"
+PATH="/home/ubuntu/workspace/projeto/ImageMagick-7.0.2-9/utilities:/home/ubuntu/workspace/projeto/ImageMagick-7.0.2-9/tests:${PATH}"
+set +a
