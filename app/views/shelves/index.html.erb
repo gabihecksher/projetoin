@@ -1,6 +1,76 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Shelves</h1>
+<h1>Estantes</h1>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="container">
+  <p></p>
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Livros</th>
+        <th>Usuário</th>   
+       
+      </tr>
+    </thead>
+    <tbody>
+        <% @shelves.each do |shelf| %>
+      <tr>
+        <td><%= shelf.book.name %></td>
+        <td><%= shelf.user.name %></td>
+        <td><%= link_to(shelf) do %><strong>Comprar</strong><% end %></td>
+        <td><%= link_to(edit_shelf_path(shelf)) do %><strong>Editar</strong><% end %></td>
+        <td><%= link_to 'Destroy', shelf, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
+    
+</div>
+
+
+
+
+<div class="container">
+  
+
+  <button type="button" class="btn btn-primary btn-lg">
+    <%= link_to 'Criar estante', new_shelf_path %>
+    </button>
+  
+</div>
+  
+  
+
+<br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 <table>
   <thead>
