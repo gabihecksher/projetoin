@@ -11,4 +11,7 @@ class StaticPagesController < ApplicationController
   
   def buy
   end
+  
+  def contact
+  end
 end

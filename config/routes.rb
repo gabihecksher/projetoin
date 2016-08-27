@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   
   get  'static_pages/home'
   get  'static_pages/catalog'
+  get  'static_pages/contact'
   get  'static_pages/buy'
 
   get '/login', to: 'sessions#new'
