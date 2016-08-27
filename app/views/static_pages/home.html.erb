@@ -1,4 +1,14 @@
+<style>
+    .avatar{
+      padding:0px 0px 0px 0px;
+      border-radius: 50%; 
+    }
+    .avatar img{
+      height: 150px;
+      width: auto;
+    }
 
+</style>
 <script src="js/jquery.js"></script>
 	<script src="js/bootstrap.min.js"></script>
 	<script src="js/jquery.scrollUp.min.js"></script>
@@ -84,126 +94,37 @@
 					</div>
 	</section>
 	
-	<section>
-		<div class="container">
-			<div class="row">
-				<div class="col-sm-3">
-					<div class="left-sidebar">
-						<h2>Categorias</h2>
-						<div class="panel-group category-products" id="accordian"><!--category-productsr-->
-							<div class="panel panel-default">
-								<div class="panel-heading">
-									<h4 class="panel-title">
-										<a data-toggle="collapse" data-parent="#accordian" href="#sportswear">
-											<span class="badge pull-right"><i class="fa fa-plus"></i></span>
-											Mais Vendidos
-										</a>
-									</h4>
-								</div>
-								<div id="sportswear" class="panel-collapse collapse">
-									<div class="panel-body">
-										<ul>
-											<li><a href="#">Semanal</a></li>
-											<li><a href="#">Mensal</a></li>
-											<li><a href="#">Anual </a></li>
-											
-										</ul>
-									</div>
-								</div>
-							</div>
-							<div class="panel panel-default">
-								<div class="panel-heading">
-									<h4 class="panel-title">
-										<a data-toggle="collapse" data-parent="#accordian" href="#mens">
-											<span class="badge pull-right"><i class="fa fa-plus"></i></span>
-											Pré-Venda
-										</a>
-									</h4>
-								</div>
-								<div id="mens" class="panel-collapse collapse">
-									<div class="panel-body">
-										<ul>
-											<% @categories.each do |category| %>
-												<li><a href="#"><%= category.name %></a></li>
-											<% end %>
-										</ul>
-									</div>
-								</div>
-							</div>
-							
-							<div class="panel panel-default">
-								<div class="panel-heading">
-									<h4 class="panel-title">
-										<a data-toggle="collapse" data-parent="#accordian" href="#womens">
-											<span class="badge pull-right"><i class="fa fa-plus"></i></span>
-											Lançamentos
-										</a>
-									</h4>
-								</div>
-								<div id="womens" class="panel-collapse collapse">
-									<div class="panel-body">
-										<ul>
-											<% @categories.each do |category| %>
-												<li><a href="#"><%= category.name %></a></li>
-											<% end %>
-										</ul>
-									</div>
-								</div>
-							</div>
-							<div class="panel panel-default">
-								<div class="panel-heading">
-									<h4 class="panel-title"><a href="#">Auto-Ajuda</a></h4>
-								</div>
-							</div>
-							<div class="panel panel-default">
-								<div class="panel-heading">
-									<h4 class="panel-title"><a href="#">Educacional</a></h4>
-								</div>
-							</div>
-							<div class="panel panel-default">
-								<div class="panel-heading">
-									<h4 class="panel-title"><a href="#">Ficção</a></h4>
-								</div>
-							</div>
-							<div class="panel panel-default">
-								<div class="panel-heading">
-									<h4 class="panel-title"><a href="#">HQ's</a></h4>
-								</div>
-							<div class="panel panel-default">
-								<div class="panel-heading">
-									<h4 class="panel-title"><a href="#">Idiomas</a></h4>
-								</div>
-							</div>
-							<div class="panel panel-default">
-								<div class="panel-heading">
-									<h4 class="panel-title"><a href="#">Infantil</a></h4>
-								</div>
-							</div>
-							<div class="panel panel-default">
-								<div class="panel-heading">
-									<h4 class="panel-title"><a href="#">Literatura</a></h4>
-								</div>
-							</div>
-							<div class="panel panel-default">
-								<div class="panel-heading">
-									<h4 class="panel-title"><a href="#">Não-Ficção</a></h4>
-								</div>
-							</div>
-							<div class="panel panel-default">
-								<div class="panel-heading">
-									<h4 class="panel-title"><a href="#">Romance</a></h4>
-								</div>
-							</div>
-						</div><!--/category-products-->
-						
-						
-					
-				</div>
-				
-				
-			</div>
-		</div>
-	</section>
-	
+<h1>Promoções</h1>
+<% @books.each do |book| %>
+    
+    <% if book.id == 1 %>
+    	<p class="avatar"><%= image_tag book.avatar.url(:large) %></p>
+        <h2> <%= book.name %> </h2>
+        <p> Autor: <%= book.author.name %> </p>
+        <p><strike>R$80,00</strike></p>
+        <p>R$<%= book.price %></p><br>
+        <%= link_to 'Show', book %> <!-- mudar para a pg buy -->
+        <button type="button">Adicionar à estante</button><br>
+    <% end %>
+    
+    <% if book.id == 3 %>
+    	<p class="avatar"><%= image_tag book.avatar.url(:large) %></p>
+        <h2> <%= book.name %> </h2>
+        <p> Autor: <%= book.author.name %> </p>
+        <p><strike>R$45,00</strike></p>
+        <p>R$<%= book.price %></p><br>
+        <%= link_to 'Show', book %> <!-- mudar para a pg buy -->
+        <button type="button">Adicionar à estante</button><br>
+    <% end %>
+    
+    <% if book.id == 5 %>
+    	<p class="avatar"><%= image_tag book.avatar.url(:large) %></p>
+        <h2> <%= book.name %> </h2>
+        <p> Autor: <%= book.author.name %> </p>
+        <p><strike>R$50,00</strike></p>
+        <p>R$<%= book.price %></p><br>
+        <%= link_to 'Show', book %> <!-- mudar para a pg buy -->
+        <button type="button">Adicionar à estante</button><br>
+    <% end %>
 
-
+<% end %>

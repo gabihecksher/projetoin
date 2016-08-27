@@ -8,4 +8,7 @@ class ApplicationController < ActionController::Base
         redirect_to login_url
       end
     end
+    def user_adm
+      redirect_to(root_url) unless current_user.adm == true
+    end
 end
