@@ -1,4 +1,20 @@
+<style>
+    .avatar{
+      padding:0px 0px 0px 0px;
+      border-radius: 50%; 
+    }
+    .avatar img{
+      height: 150px;
+      width: auto;
+    }
+
+</style>
+
 <p id="notice"><%= notice %></p>
+
+<p class="avatar">
+    <%= image_tag @user.avatar.url(:large), class:"img-circle" %>
+</p>
 
 <p>
   <strong>Name:</strong>
