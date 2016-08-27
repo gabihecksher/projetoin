@@ -49,7 +49,7 @@
         <p> Autor: <%= book.author.name %> </p>
         <p> Preço: <%= book.price %> </p>
         <p> Sinopse: <%= book.description %> </p>
-        <%= link_to 'Show', book %> <!-- mudar para a pg buy -->
+        <%= link_to(book) do %><strong>Comprar</strong><% end %>
         <button type="button">Adicionar à estante</button><br>
     <% end %>
 
