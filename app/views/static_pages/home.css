@@ -19,7 +19,7 @@ Responsive navbar-brand image CSS
 }
 .navbar-brand>img {
   height: 290%;
-  padding: 15px;
+  padding: 0px;
   margin: auto;
   vertical-align: middle;
 }

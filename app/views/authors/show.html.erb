@@ -1,3 +1,14 @@
+<style>
+    .avatar{
+      padding:0px 0px 0px 0px;
+      border-radius: 50%; 
+    }
+    .avatar img{
+      height: 150px;
+      width: auto;
+    }
+
+</style>
 
 <p id="notice"><%= notice %></p>
 
@@ -31,4 +42,11 @@
         </left>
       </div>
 
+<% @books.each do |book| %>
+  <% if book.author.id == @author.id %>
+    <p class="avatar">
+       <button onclick="window.location.href='/books/<%= book.id %>'"><%= image_tag book.avatar.url(:large) %></button>
+    </p>
+  <% end %>
+<% end %>
   

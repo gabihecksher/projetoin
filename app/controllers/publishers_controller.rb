@@ -12,6 +12,7 @@ class PublishersController < ApplicationController
   # GET /publishers/1
   # GET /publishers/1.json
   def show
+    @books = Book.all
   end
 
   # GET /publishers/new

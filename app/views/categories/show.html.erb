@@ -9,8 +9,11 @@
     }
     
   </style>
+  
+  
 
 	  <section>
+	    
 	    <h1> <center><%= @category.name %> </center> </h1>
 		    <div class="container">
    	      <div class="row">
@@ -36,11 +39,7 @@
     	</section>
     			  
     			  <!--books-->
-    			  
-    			  
-    			  
-    			  
-                            <% @books.each do |book| %>
+    			  <% @books.each do |book| %>
     			                  <% if book.category_id >= @category.id %>
                           	<p class="avatar">
                           	<%= image_tag book.avatar.url(:large) %>
@@ -53,6 +52,10 @@
                               <button type="button">Adicionar à estante</button><br>
                               
                               <% end %>
+    			  
+    			  
+    			  
+                            
                              
 
 <% end %>
