@@ -51,10 +51,8 @@
   <%= @book.description %>
 </p>
 
-<% if logged_in? %>
-  <input id="submit_button" type="submit" value="CONTINUAR" /><br>
-  <p>Próximo passo: pagamento</p><br>
-<% else %>
+<% if logged_in? && @book.available_quantity > 0 %>
+
   <div class="row">
 	  <label for="name">Nome do destinatário:</label><br />
 		  <input id="name" class="input" name="name" type="text" value="" size="30" /><br />
@@ -83,8 +81,8 @@
 	  <label for="name">Nome do comprador:</label><br />
 		  <input id="name" class="input" name="name" type="text" value="" size="30" /><br />
   </div><br>
-  <input id="submit_button" type="submit" value="CONTINUAR" /><br>
-  <p>Próximo passo: pagamento</p><br>
+  <%= link_to 'Buy', buy_path(@book) %>
+  <%= link_to 'Buy', @book, method: :post %>
 <% end %>
 
 <%= link_to 'Edit', edit_book_path(@book) %> |

@@ -68,6 +68,10 @@ class BooksController < ApplicationController
       format.json { head :no_content }
     end
   end
+  
+  def buy
+    @book.available_quantity = @book.available_quantity
+  end
 
   private
     # Use callbacks to share common setup or constraints between actions.

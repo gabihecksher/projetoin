@@ -95,36 +95,41 @@
 	</section>
 	
 <h1>Promoções</h1>
+<div style="width: 100%; overflow: hidden;">
 <% @books.each do |book| %>
-    
-    <% if book.id == 1 %>
-    	<p class="avatar"><%= image_tag book.avatar.url(:large) %></p>
-        <h2> <%= book.name %> </h2>
-        <p> Autor: <%= book.author.name %> </p>
-        <p><strike>R$80,00</strike></p>
-        <p>R$<%= book.price %></p><br>
-        <%= link_to 'Show', book %> <!-- mudar para a pg buy -->
-        <button type="button">Adicionar à estante</button><br>
-    <% end %>
-    
-    <% if book.id == 3 %>
-    	<p class="avatar"><%= image_tag book.avatar.url(:large) %></p>
-        <h2> <%= book.name %> </h2>
-        <p> Autor: <%= book.author.name %> </p>
-        <p><strike>R$45,00</strike></p>
-        <p>R$<%= book.price %></p><br>
-        <%= link_to 'Show', book %> <!-- mudar para a pg buy -->
-        <button type="button">Adicionar à estante</button><br>
-    <% end %>
-    
-    <% if book.id == 5 %>
-    	<p class="avatar"><%= image_tag book.avatar.url(:large) %></p>
-        <h2> <%= book.name %> </h2>
-        <p> Autor: <%= book.author.name %> </p>
+	<div style="width: 600px; float: left;">
+	    <% if book.id == 6 %>
+	    	<p class="avatar">
+	       		<button onclick="window.location.href='/books/<%= book.id %>'"><%= image_tag book.avatar.url(:large) %></button>
+	    	</p>
+	        <h2> <%= book.name %> </h2>
+	        <p> Autor: <%= book.author.name %> <%= book.author.lastname %> </p>
+	        <p><strike>R$60,00</strike></p>
+	        <p>R$<%= book.price %></p><br>
+	    <% end %>
+	</div>
+	<div style="margin-left: 300px;">
+	    <% if book.id == 9 %>
+	    	<p class="avatar">
+	       		<button onclick="window.location.href='/books/<%= book.id %>'"><%= image_tag book.avatar.url(:large) %></button>
+	    	</p>
+	    	<h2> <%= book.name %> </h2>
+	        <p> Autor: <%= book.author.name %> <%= book.author.lastname %> </p>
+	        <p><strike>R$65,00</strike></p>
+	        <p>R$<%= book.price %></p><br>
+	    <% end %>
+	</div>
+	<div style="margin-left: 800px;">
+    <% if book.id == 14 %>
+    	<p class="avatar">
+       		<button onclick="window.location.href='/books/<%= book.id %>'"><%= image_tag book.avatar.url(:large) %></button>
+    	</p>
+    	<h2> <%= book.name %> </h2>
+        <p> Autor: <%= book.author.name %> <%= book.author.lastname %> </p>
         <p><strike>R$50,00</strike></p>
         <p>R$<%= book.price %></p><br>
-        <%= link_to 'Show', book %> <!-- mudar para a pg buy -->
-        <button type="button">Adicionar à estante</button><br>
     <% end %>
+    </div>
+</div>
 
 <% end %>
