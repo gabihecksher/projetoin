@@ -81,9 +81,12 @@
 	  <label for="name">Nome do comprador:</label><br />
 		  <input id="name" class="input" name="name" type="text" value="" size="30" /><br />
   </div><br>
-  <%= link_to 'Buy', buy_path(:book => @book) %>
+  <% if logged_in? %>
+    <%= link_to 'Comprar', buy_path(:book => @book) %>
+  <% else %>
+    <p>Cadastre-se ou faça login para comprar esse produto</p><br>
+  <% end %>
 <% end %>
 <!-- Um minuto, tô testando só, vou desfazer o que fiz -->
-<%= link_to 'Buy', buy_path(:book => @book) %>
 <%= link_to 'Edit', edit_book_path(@book) %> |
 <%= link_to 'Back', books_path %>
