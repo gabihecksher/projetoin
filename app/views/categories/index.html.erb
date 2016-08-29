@@ -17,8 +17,10 @@
       <tr>
         <td><%= category.name %></td>
         <td><%= link_to(category) do %><strong>Ver livros</strong><% end %></td>
-        <td><%= link_to(edit_category_path(category)) do %><strong>Editar</strong><% end %></td>
-        <td><%= link_to 'Destroy', category, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% if logged_in? && current_user.adm == true %>
+          <td><%= link_to(edit_category_path(category)) do %><strong>Editar</strong><% end %></td>
+          <td><%= link_to 'Destroy', category, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
       </tr>
     <% end %>
     </tbody>
@@ -39,5 +41,3 @@
 </div>
   
   <br>
-  
-  

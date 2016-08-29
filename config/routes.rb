@@ -5,7 +5,7 @@ Rails.application.routes.draw do
 
   get 'sessions/new'
   
-  post '/buy', to: 'books#buy'
+  get '/buy', to: 'books#buy'
 
   root 'static_pages#home'
   

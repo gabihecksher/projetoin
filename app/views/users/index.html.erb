@@ -33,8 +33,10 @@
         <td><%= user.address %></td>
         <td><%= user.adm %></td>
         <td><%= link_to(user) do %><strong>Ver</strong><% end %></td>
-        <td><%= link_to(edit_user_path(user)) do %><strong>Editar</strong><% end %></td>
-        <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% if logged_in? && current_user.adm == true %>
+          <td><%= link_to(edit_user_path(user)) do %><strong>Editar</strong><% end %></td>
+          <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
       </tr>
     <% end %>
     </tbody>

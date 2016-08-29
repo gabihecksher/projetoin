@@ -70,7 +70,9 @@ class BooksController < ApplicationController
   end
   
   def buy
-    @book.available_quantity = @book.available_quantity
+    @book = Book.find(params[:book])
+    @book.update(:available_quantity => @book.available_quantity - 1)
+    redirect_to root_path
   end
 
   private

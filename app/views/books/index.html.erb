@@ -31,8 +31,10 @@
         <td><%= book.publisher.name %></td>
         <td><%= book.description %></td>
         <td><%= link_to(book) do %><strong>Comprar</strong><% end %></td>
-        <td><%= link_to(edit_book_path(book)) do %><strong>Editar</strong><% end %></td>
-        <td><%= link_to 'Destroy', book, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% if logged_in? && current_user.adm == true %>
+          <td><%= link_to(edit_book_path(book)) do %><strong>Editar</strong><% end %></td>
+          <td><%= link_to 'Destroy', book, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
       </tr>
     <% end %>
     </tbody>
@@ -51,7 +53,3 @@
     </button>
   
 </div>
-  
-  
-
-<br>
